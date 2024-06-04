@@ -1,22 +1,27 @@
 import React from "react";
 
-import { type ChildrenProps } from "@/types/props";
+import Image from "next/image";
 
-import { SidebarItem } from "./components";
+import { type ChildrenProps } from "@/types/props";
 
 const MainTemplate: React.FC<ChildrenProps> = ({ children }) => (
   <div className="flex h-screen">
     <div className="bg-black-1 w-[281px] shadow-md border-r border-white-1">
       <div className="p-4">
-        <div className="text-[18px] font-bold mb-4">Sidebar</div>
+        {/* <div className="text-[18px] font-bold mb-4">Sidebar</div>
         <SidebarItem icon="dashboard">Dashboard</SidebarItem>
-        <SidebarItem icon="overview">Overview</SidebarItem>
+        <SidebarItem icon="overview">Overview</SidebarItem> */}
       </div>
     </div>
     <div className="flex flex-col flex-1">
       <div className="bg-black-2 h-[58px] flex items-center px-4">
         <div className="flex justify-between items-center">
-          <h1 className="text-xl font-semibold text-[18px]">Navbar</h1>
+          <Image
+            src={`/svg/icon-search.svg`}
+            alt="Dashboard"
+            height={16}
+            width={16}
+          />
         </div>
       </div>
       <div className="bg-black-1 h-full p-8">{children}</div>
