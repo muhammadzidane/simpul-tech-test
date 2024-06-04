@@ -2,10 +2,8 @@
 
 import React, { useState } from "react";
 
-import { QuickIcon } from "@/components";
+import { InboxDetail, QuickIcon } from "@/components";
 import useToggle from "@/hooks/toggle";
-
-import { Inbox } from "./components";
 
 const QuickAction = () => {
   const { isToggle, onToggle } = useToggle();
@@ -21,7 +19,8 @@ const QuickAction = () => {
 
   return (
     <div className="absolute bottom-6 right-6">
-      <Inbox />
+      {/* <Inbox /> */}
+      <InboxDetail />
       <div className="flex justify-end items-end gap-4">
         {isToggle && (
           <div className="flex gap-4 animate-slide-in-left">

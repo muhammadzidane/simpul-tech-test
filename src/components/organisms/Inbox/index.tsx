@@ -1,12 +1,12 @@
 import React from "react";
 
-import { Input } from "@/components";
+import { Input, Card } from "@/components";
 
 import { InboxList } from "./components";
 
 const Inbox = () => {
   return (
-    <div className="w-[520px] h-[480px] bg-white-1 mb-4 py-4 px-6 rounded-sm">
+    <Card height="480px" width="525px">
       <div className="mb-5">
         <Input placeholder="Search" icon="icon-search" />
       </div>
@@ -15,7 +15,7 @@ const Inbox = () => {
         <InboxList />
         <InboxList />
       </div>
-    </div>
+    </Card>
   );
 };
 

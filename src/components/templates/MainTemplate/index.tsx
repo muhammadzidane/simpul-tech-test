@@ -2,8 +2,6 @@ import React from "react";
 
 import Image from "next/image";
 
-import { type ChildrenProps } from "@/types/props";
-
 const MainTemplate: React.FC<ChildrenProps> = ({ children }) => (
   <div className="flex h-screen">
     <div className="bg-black-1 w-[281px] shadow-md border-r border-white-1">

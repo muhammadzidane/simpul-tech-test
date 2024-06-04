@@ -4,6 +4,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        "light-blue-1": "#EEDCFF",
+        "purple-1": "#9B51E0",
         "white-1": "#FFFFFF",
         "white-2": "#F2F2F2",
         "black-1": "#333333",
@@ -11,7 +13,9 @@ const config: Config = {
         secondary: "#FCEED3",
         "gray-1": "#E0E0E0",
         "gray-2": "#828282",
+        "gray-3": "#BDBDBD",
         primary: "#2F80ED",
+        warning: "#E5A443",
         danger: "#EB5757",
       },
       keyframes: {
