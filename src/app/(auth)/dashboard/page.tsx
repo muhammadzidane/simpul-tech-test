@@ -25,16 +25,6 @@ const Dashboard = async () => {
       <form action={logoutAction}>
         <Button type="submit">Logout</Button>
       </form>
-      {/* <ul>
-        {data?.map((post, index) => (
-          <li key={post.id}>
-            <div>
-              <span>{index + 1}. </span>
-              <a href="#">{post.title}</a>
-            </div>
-          </li>
-        ))}
-      </ul> */}
       <Page />
     </div>
   );

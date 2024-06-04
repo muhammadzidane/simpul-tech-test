@@ -9,7 +9,11 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
       colors: {
-        "blue-1": "#e3f2fd",
+        "white-1": "#FFFFFF",
+        "black-1": "#333333",
+        "black-2": "#4F4F4F",
+        secondary: "#FCEED3",
+        primary: "#2F80ED",
       },
     },
   },
