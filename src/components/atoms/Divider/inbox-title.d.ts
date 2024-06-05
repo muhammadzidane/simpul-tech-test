@@ -1,0 +1,3 @@
+interface InboxTitleProps {
+  title: string;
+}

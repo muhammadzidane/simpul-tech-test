@@ -3,6 +3,8 @@ import React from "react";
 import classNames from "classnames";
 import Image from "next/image";
 
+import { Popover } from "@/components/atoms";
+
 const InboxDetailChat: React.FC<InboxDetailChatProps> = ({
   username,
   message,
@@ -25,13 +27,26 @@ const InboxDetailChat: React.FC<InboxDetailChatProps> = ({
     <div>
       <div className={userClassName}>{username ?? "You"}</div>
       <div className="flex gap-2">
-        <Image
-          className={horizClassName}
-          src="/svg/icon-horiz.svg"
-          alt="Icon Horiz"
-          height={16}
-          width={16}
-        />
+        <div className={horizClassName}>
+          <Popover
+            button={
+              <Image
+                src="/svg/icon-horiz.svg"
+                alt="Icon Horiz"
+                height={16}
+                width={16}
+              />
+            }
+            position="bottom"
+          >
+            <div className="w-[126px] cursor-pointer">
+              <div className="p-2 border-b border-gray-2 text-primary">
+                Edit
+              </div>
+              <div className="p-2 text-danger">Delete</div>
+            </div>
+          </Popover>
+        </div>
         <div className={chatClassName}>
           <div>{message}</div>
           <div className="mt-2">19:32</div>

@@ -3,6 +3,28 @@ import type { Config } from "tailwindcss";
 const config: Config = {
   theme: {
     extend: {
+      keyframes: {
+        "slide-in-bottom": {
+          "0%": {
+            transform: "translateY(-15%)",
+            opacity: "0",
+          },
+          "100%": {
+            transform: "translateY(0)",
+            opacity: "1",
+          },
+        },
+        "slide-in-left": {
+          "0%": {
+            transform: "translateX(15%)",
+            opacity: "0",
+          },
+          "100%": {
+            transform: "translateX(0)",
+            opacity: "1",
+          },
+        },
+      },
       colors: {
         "light-blue-1": "#EEDCFF",
         "purple-1": "#9B51E0",
@@ -18,25 +40,14 @@ const config: Config = {
         warning: "#E5A443",
         danger: "#EB5757",
       },
-      keyframes: {
-        "slide-in-left": {
-          "0%": {
-            transform: "translateX(15%)",
-            opacity: "0",
-          },
-          "100%": {
-            transform: "translateX(0)",
-            opacity: "1",
-          },
-        },
-      },
       backgroundImage: {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
       animation: {
-        "slide-in-left": "slide-in-left 400ms ease-out",
+        "slide-in-bottom": "slide-in-bottom 300ms ease-out",
+        "slide-in-left": "slide-in-left 300ms ease-out",
       },
     },
   },
