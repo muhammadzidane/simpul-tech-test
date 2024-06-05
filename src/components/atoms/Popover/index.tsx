@@ -4,12 +4,6 @@ import React, { useEffect, useState, useRef } from "react";
 
 import classNames from "classnames";
 
-interface PopoverProps {
-  position: "bottom" | "right" | "left" | "top";
-  children: React.ReactNode;
-  button: React.ReactNode;
-}
-
 const Popover: React.FC<PopoverProps> = ({ position, children, button }) => {
   const [isVisible, setIsVisible] = useState(false);
   const popoverRef = useRef<HTMLDivElement>(null);

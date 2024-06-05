@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 
 import { Inter } from "next/font/google";
+import "react-datepicker/dist/react-datepicker.css";
+import "react-datepicker/dist/react-datepicker-cssmodules.css";
 
 import NextAuthProvider from "@/plugins/next-auth/provider";
 // import ReactQueryProvider from "@/plugins/react-query/provider";

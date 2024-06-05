@@ -2,47 +2,89 @@
 
 import React, { useState } from "react";
 
-import { InboxDetail, QuickIcon } from "@/components";
+import classNames from "classnames";
+
+import { InboxDetail, QuickIcon, CardTask, Inbox } from "@/components";
 import useToggle from "@/hooks/toggle";
 
 const QuickAction = () => {
   const { isToggle, onToggle } = useToggle();
-  const [actionType, setActionType] = useState<number>(0);
+  const [actionType, setActionType] = useState<
+    "inboxDetail" | undefined | "inbox" | "task"
+  >();
 
-  const onClickChangeTaskType = () => {
-    setActionType(2);
+  const onClickChangeTaskType = (): void => {
+    setActionType("task");
   };
 
-  const onClickChangeInboxType = () => {
-    setActionType(2);
+  const onClickChangeInboxType = (): void => {
+    setActionType("inbox");
   };
+
+  const onClickInboxList = (id: string): void => {
+    setActionType("inboxDetail");
+  };
+
+  const onCloseQuickAction = (): void => {
+    setActionType(undefined);
+    onToggle();
+  };
+
+  const quickActionClassName = classNames("flex gap-4 animate-slide-in-left", {
+    "flex-row-reverse": actionType === "task",
+  });
 
   return (
     <div className="absolute bottom-6 right-6">
-      {/* <Inbox /> */}
-      <InboxDetail />
+      {actionType === "task" && <CardTask />}
+      {actionType === "inbox" && <Inbox onClick={onClickInboxList} />}
+      {actionType === "inboxDetail" && (
+        <InboxDetail
+          onClickBack={onClickChangeInboxType}
+          onClickClose={onCloseQuickAction}
+        />
+      )}
+
+      {/* <Image src="/gif/icon-loading.gif" height={24} width={24} alt="ok" /> */}
+
       <div className="flex justify-end items-end gap-4">
         {isToggle && (
-          <div className="flex gap-4 animate-slide-in-left">
+          <div className={quickActionClassName}>
             <QuickIcon
               onClick={onClickChangeTaskType}
-              backgroundColor="bg-white-2"
+              icon={
+                actionType === "task"
+                  ? "icon-task-white"
+                  : "icon-task-secondary"
+              }
+              backgroundColor={
+                actionType === "task" ? "bg-yellow-1" : "bg-white-2"
+              }
+              title={actionType === undefined ? "Task" : ""}
+              active={actionType === "task"}
               backgroundSize="50px"
-              icon="icon-task"
               iconSize={24}
-              title="Task"
             />
             <QuickIcon
               onClick={onClickChangeInboxType}
-              backgroundColor="bg-white-2"
+              icon={
+                actionType === "inbox" || actionType === "inboxDetail"
+                  ? "icon-inbox-white"
+                  : "icon-inbox-blue"
+              }
+              backgroundColor={
+                actionType === "inbox" || actionType === "inboxDetail"
+                  ? "bg-primary"
+                  : "bg-white-2"
+              }
+              active={actionType === "inbox" || actionType === "inboxDetail"}
+              title={actionType === undefined ? "Inbox" : ""}
               backgroundSize="50px"
-              icon="icon-inbox"
               iconSize={24}
-              title="Inbox"
             />
           </div>
         )}
-        {actionType === 0 && (
+        {actionType === undefined && (
           <QuickIcon
             onClick={onToggle}
             backgroundColor="bg-primary"

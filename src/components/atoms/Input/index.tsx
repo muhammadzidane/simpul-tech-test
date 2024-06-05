@@ -8,6 +8,8 @@ import { type InputProps } from "./input";
 
 const Input: React.FC<InputProps> = ({
   placeholder = "...",
+  iconHeight = 16,
+  iconWidth = 16,
   errorMessage,
   className,
   label,
@@ -27,12 +29,12 @@ const Input: React.FC<InputProps> = ({
         {...rest}
       />
       {icon && (
-        <div className="absolute right-4 top-1/4 bottom-1/4">
+        <div className="flex items-center absolute right-4 top-1/4 bottom-1/4">
           <Image
             src={`/svg/${icon}.svg`}
+            height={iconHeight}
             alt="Search Icon"
-            height={12}
-            width={12}
+            width={iconWidth}
           />
         </div>
       )}

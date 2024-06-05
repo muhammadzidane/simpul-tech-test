@@ -2,12 +2,17 @@ import React from "react";
 
 import Image from "next/image";
 
-const InboxDetailHeader = () => {
+const InboxDetailHeader: React.FC<InboxDetailHeaderProps> = ({
+  onClickClose,
+  onClickBack,
+}) => {
   return (
     <div className="flex justify-between items-center h-[58px] border-b border-gray-3 px-6">
       <div className="flex gap-3">
         <Image
+          onClick={onClickBack}
           src={`/svg/icon-arrow-left.svg`}
+          className="cursor-pointer"
           alt="Arrow Left"
           height={24}
           width={24}
@@ -19,9 +24,10 @@ const InboxDetailHeader = () => {
         </div>
       </div>
       <Image
+        onClick={onClickClose}
+        className="cursor-pointer"
         src="/svg/icon-close.svg"
         alt="Icon Close"
-        // className="text-primary cursor-pointer"
         color="red"
         height={14}
         width={14}

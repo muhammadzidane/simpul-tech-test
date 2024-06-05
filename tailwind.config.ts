@@ -24,10 +24,21 @@ const config: Config = {
             opacity: "1",
           },
         },
+        "slide-in-top": {
+          "0%": {
+            transform: "translateY(15%)",
+            opacity: "0",
+          },
+          "100%": {
+            transform: "translateY(0)",
+            opacity: "1",
+          },
+        },
       },
       colors: {
         "light-blue-1": "#EEDCFF",
         "purple-1": "#9B51E0",
+        "yellow-1": "#f8b76b",
         "white-1": "#FFFFFF",
         "white-2": "#F2F2F2",
         "black-1": "#333333",
@@ -46,8 +57,9 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
       animation: {
-        "slide-in-bottom": "slide-in-bottom 300ms ease-out",
-        "slide-in-left": "slide-in-left 300ms ease-out",
+        "slide-in-bottom": "slide-in-bottom 250ms ease-out",
+        "slide-in-left": "slide-in-left 250ms ease-out",
+        "slide-in-top": "slide-in-top 250ms ease-out",
       },
     },
   },

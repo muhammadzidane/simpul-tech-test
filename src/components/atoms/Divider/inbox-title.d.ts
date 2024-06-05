@@ -1,3 +1,3 @@
 interface InboxTitleProps {
-  title: string;
+  onClick: () => void;
 }

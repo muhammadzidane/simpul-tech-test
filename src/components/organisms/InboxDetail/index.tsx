@@ -9,10 +9,20 @@ import {
   Card,
 } from "@/components";
 
-const InboxDetail = () => {
+const InboxDetail: React.FC<InboxDetailProps> = ({
+  onClickClose,
+  onClickBack,
+}) => {
   return (
-    <Card className="!p-0 flex flex-col" height="480px" width="708px">
-      <InboxDetailHeader />
+    <Card
+      className="!p-0 flex flex-col animate-slide-in-top"
+      height="480px"
+      width="708px"
+    >
+      <InboxDetailHeader
+        onClickClose={onClickClose}
+        onClickBack={onClickBack}
+      />
 
       <div className="px-[20px] py-[14px] overflow-y-scroll h-[calc(100%-58px)]">
         <InboxDetailChat message="No worries" type={2} />
