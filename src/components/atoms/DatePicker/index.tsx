@@ -14,6 +14,7 @@ const DatePicker2: React.FC<DatePickerProps> = ({ selectedDate, onChange }) => {
         className="block w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500"
         customInput={<Input icon="icon-calendar" />}
         placeholderText="Select a date"
+        popperPlacement="right-start"
         dateFormat="dd/MM/YYYY"
         selected={selectedDate}
       />

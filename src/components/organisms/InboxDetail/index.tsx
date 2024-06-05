@@ -24,7 +24,7 @@ const InboxDetail: React.FC<InboxDetailProps> = ({
         onClickBack={onClickBack}
       />
 
-      <div className="px-[20px] py-[14px] overflow-y-scroll h-[calc(100%-58px)]">
+      <div className="px-[19px] py-[14px] mr-1 overflow-y-scroll h-[calc(100%-58px)]">
         <InboxDetailChat message="No worries" type={2} />
 
         <Divider>Today June 09, 2021</Divider>

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 
 function useToggle(initialValue: boolean = false): UseToggleReturn {
