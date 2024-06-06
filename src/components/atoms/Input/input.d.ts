@@ -1,6 +1,4 @@
-import { type InputHTMLAttributes } from "react";
-
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   errorMessage?: string;
   iconHeight?: number;
   iconWidth?: number;

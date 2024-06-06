@@ -18,7 +18,7 @@ const InboxDetailHeader: React.FC<InboxDetailHeaderProps> = ({
           width={24}
         />
         <div>
-          <div className="text-primary text-[16px] font-semibold">
+          <div className="text-primary text-base font-semibold">
             I-423 - AMARKHIL, Obaidullah [Affirmative Filling with ZHN]
           </div>
         </div>

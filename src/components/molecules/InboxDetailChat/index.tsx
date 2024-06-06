@@ -24,7 +24,7 @@ const InboxDetailChat: React.FC<InboxDetailChatProps> = ({
   });
 
   return (
-    <div>
+    <div className="text-sm">
       <div className={userClassName}>{username ?? "You"}</div>
       <div className="flex gap-2">
         <div className={horizClassName}>
@@ -37,7 +37,12 @@ const InboxDetailChat: React.FC<InboxDetailChatProps> = ({
                 width={16}
               />
             }
-            position="bottom"
+            position={
+              (type === 1 && message.length >= 79) ||
+              (type === 2 && message.length <= 79)
+                ? "left"
+                : "right"
+            }
           >
             <div className="w-[126px] cursor-pointer">
               <div className="p-2 border-b border-gray-2 text-primary">

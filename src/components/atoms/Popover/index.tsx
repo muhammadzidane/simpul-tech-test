@@ -37,9 +37,9 @@ const Popover: React.FC<PopoverProps> = ({ position, children, button }) => {
     "absolute z-10 bg-white border border-gray-300 rounded shadow-lg",
     `animate-slide-in-${position}`,
     {
+      "right-full top-0 mr-2": position === "left",
+      "left-full top-0 ml-2": position === "right",
       "bottom-full mb-2": position === "top",
-      "right-full mr-2": position === "left",
-      "left-full mr-2": position === "right",
       "top-full mt-2": position === "bottom",
     }
   );

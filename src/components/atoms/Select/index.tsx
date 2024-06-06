@@ -14,7 +14,8 @@ const CustomSelect: React.FC<SelectProps> = ({
 
   const selectClassNames = classNames(
     selectClassName,
-    "block appearance-none w-full h-[40px] pl-3 pr-6 border border-gray-2 rounded-[6px]"
+    "block appearance-none w-full h-[40px]",
+    "text-sm pl-3 pr-6 border border-gray-2 rounded-[6px]"
   );
 
   return (

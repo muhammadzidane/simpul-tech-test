@@ -14,6 +14,16 @@ const config: Config = {
             opacity: "1",
           },
         },
+        "slide-in-right": {
+          "0%": {
+            transform: "translateX(-15%)",
+            opacity: "0",
+          },
+          "100%": {
+            transform: "translateX(0)",
+            opacity: "1",
+          },
+        },
         "slide-in-left": {
           "0%": {
             transform: "translateX(15%)",
@@ -51,15 +61,16 @@ const config: Config = {
         warning: "#E5A443",
         danger: "#EB5757",
       },
+      animation: {
+        "slide-in-bottom": "slide-in-bottom 250ms ease-out",
+        "slide-in-right": "slide-in-right 250ms ease-out",
+        "slide-in-left": "slide-in-left 250ms ease-out",
+        "slide-in-top": "slide-in-top 250ms ease-out",
+      },
       backgroundImage: {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-      },
-      animation: {
-        "slide-in-bottom": "slide-in-bottom 250ms ease-out",
-        "slide-in-left": "slide-in-left 250ms ease-out",
-        "slide-in-top": "slide-in-top 250ms ease-out",
       },
     },
   },

@@ -7,7 +7,7 @@ const Checkbox: React.FC<CheckboxProps> = ({ onChange, checked, label }) => {
   return (
     <label className="checkbox">
       {label && <span>{label}</span>}
-      <input onChange={handleChange} type="checkbox" className="" />
+      <input onChange={handleChange} checked={checked} type="checkbox" />
       <span className="checkmark"></span>
     </label>
   );

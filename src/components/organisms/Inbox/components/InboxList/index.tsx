@@ -29,20 +29,20 @@ const InboxList: React.FC<InboxTitleProps> = ({ onClick }) => {
         </div>
       </div>
 
-      <div className="flex-1">
+      <div className="flex-1 text-sm">
         <div className="flex gap-3 flex-1">
           <div>
-            <div className="text-primary font-semibold text-sm">
+            <div className="text-primary font-semibold">
               109220-Naturalization
             </div>
           </div>
-          <div className="text-sm">Januari 1, 2021 19:10</div>
+          <div className="">Januari 1, 2021 19:10</div>
         </div>
 
         <div>
-          <div className="font-semibold text-sm">Cameron Philip:</div>
+          <div className="font-semibold ">Cameron Philip:</div>
           <div className="flex justify-between">
-            <div className="text-sm">Please check this out!</div>
+            <div className="">Please check this out!</div>
             <div className="bg-danger w-[10px] h-[10px] rounded-full"></div>
           </div>
         </div>

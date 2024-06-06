@@ -16,7 +16,8 @@ const Button: React.FC<ButtonProps> = ({
   const { pending } = useFormStatus();
   const buttonClassName = classNames(
     className,
-    "py-2 px-4 bg-indigo-500 text-white rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+    "focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50 text-sm",
+    "py-2 px-4 bg-indigo-500 text-white rounded-md hover:bg-indigo-600"
   );
 
   return (
