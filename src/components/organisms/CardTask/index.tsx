@@ -1,8 +1,11 @@
 import React from "react";
 
 import { TaskData, Select, Button, Card } from "@/components";
+// import { dashboardFetchInboxList } from "@/request/dashboard";
 
 const CardTask = () => {
+  // const response = await dashboardFetchInboxList();
+
   const myTaskOptions = [
     { label: "Personal Errands", value: "personalErrands" },
     { label: "Urgent To-Do", value: "urgentTodo" },
@@ -16,7 +19,6 @@ const CardTask = () => {
     >
       <div className="flex justify-between pl-20 mb-[20px]">
         <Select
-          onChange={() => {}}
           selectClassName="w-fit"
           options={myTaskOptions}
           placeholder="My Tasks"

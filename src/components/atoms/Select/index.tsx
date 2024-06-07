@@ -2,16 +2,11 @@ import React from "react";
 
 import classNames from "classnames";
 
-const CustomSelect: React.FC<SelectProps> = ({
+const Select: React.FC<SelectProps> = ({
   selectClassName,
   placeholder,
-  onChange,
   options,
 }) => {
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    onChange(event.target.value);
-  };
-
   const selectClassNames = classNames(
     selectClassName,
     "block appearance-none w-full h-[40px]",
@@ -20,7 +15,7 @@ const CustomSelect: React.FC<SelectProps> = ({
 
   return (
     <div className="flex cursor-pointer">
-      <select onChange={handleChange} className={selectClassNames}>
+      <select className={selectClassNames}>
         {placeholder && (
           <option value="" disabled selected hidden>
             {placeholder}
@@ -45,4 +40,4 @@ const CustomSelect: React.FC<SelectProps> = ({
   );
 };
 
-export default CustomSelect;
+export default Select;

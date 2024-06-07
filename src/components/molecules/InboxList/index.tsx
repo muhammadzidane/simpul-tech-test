@@ -1,13 +1,16 @@
-// "use client";
+"use client";
 
 import React from "react";
 
 import { QuickIcon } from "@/components";
+import { useQuickActionContext } from "@/contexts";
 
-const InboxList: React.FC<InboxTitleProps> = ({ onClick }) => {
+const InboxList: React.FC = () => {
+  const { onClickInboxList } = useQuickActionContext();
+
   return (
     <div
-      onClick={onClick}
+      onClick={onClickInboxList}
       className="flex gap-3 border-b border-gray-1 pl-4 pb-5 cursor-pointer"
     >
       <div className="relative">

@@ -1,31 +1,29 @@
 import React from "react";
 
-import { Input, Card } from "@/components";
+import { InboxList, Input, Card } from "@/components";
+// import { dashboardFetchInboxList } from "@/request/dashboard";
 
-import { InboxList } from "./components";
+const Inbox: React.FC = async () => {
+  // const inboxList = await dashboardFetchInboxList({ limit: 10, page: 1 });
 
-const Inbox: React.FC<InboxProps> = ({ onClick }) => {
-  // const response = await new Promise((resolve) => setTimeout(resolve, 1000));
-
-  // console.log(response);
+  // console.log("wahhh", inboxList.data);
 
   return (
-    <Card className="animate-slide-in-top" height="480px" width="525px">
-      <div className="mb-5">
-        <Input placeholder="Search" icon="icon-search" />
-      </div>
+    <Card className="animate-slide-in-top flex" height="480px" width="525px">
+      <div className="flex flex-1 flex-col gap-5 overflow-y-hidden">
+        <Input icon="icon-search-black" placeholder="Search" />
 
-      <div className="flex flex-col gap-4">
-        <InboxList
-          onClick={() => {
-            onClick("1");
-          }}
-        />
-        {/* <InboxList
-          onClick={() => {
-            onClick("2");
-          }}
-        /> */}
+        <div className="flex flex-col flex-1 gap-4 overflow-y-scroll pr-2">
+          <InboxList />
+          {/* <InboxList />
+          <InboxList />
+          <InboxList />
+          <InboxList />
+          <InboxList />
+          <InboxList /> */}
+          {/* {inboxList.data.map(() => (
+          ))} */}
+        </div>
       </div>
     </Card>
   );

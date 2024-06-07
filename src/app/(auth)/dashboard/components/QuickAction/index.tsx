@@ -1,34 +1,21 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 
 import classNames from "classnames";
 
-import { InboxDetail, QuickIcon, CardTask, Inbox } from "@/components";
-import useToggle from "@/hooks/toggle";
+import { InboxDetail, QuickIcon } from "@/components";
+import { useQuickActionContext } from "@/contexts";
 
-const QuickAction = () => {
-  const { isToggle, onToggle } = useToggle();
-  const [actionType, setActionType] = useState<
-    "inboxDetail" | undefined | "inbox" | "task"
-  >();
-
-  const onClickChangeTaskType = (): void => {
-    setActionType("task");
-  };
-
-  const onClickChangeInboxType = (): void => {
-    setActionType("inbox");
-  };
-
-  const onClickInboxList = (id: string): void => {
-    setActionType("inboxDetail");
-  };
-
-  const onCloseQuickAction = (): void => {
-    setActionType(undefined);
-    onToggle();
-  };
+const QuickAction: React.FC<QuickActionProps> = ({ CardTask, Inbox }) => {
+  const {
+    onClickChangeInboxType,
+    onClickChangeTaskType,
+    isToggleQuickAction,
+    onToggleQuickAction,
+    onCloseQuickAction,
+    actionType,
+  } = useQuickActionContext();
 
   const quickActionClassName = classNames("flex gap-4 animate-slide-in-left", {
     "flex-row-reverse": actionType === "task",
@@ -36,8 +23,8 @@ const QuickAction = () => {
 
   return (
     <div className="absolute bottom-6 right-6">
-      {actionType === "task" && <CardTask />}
-      {actionType === "inbox" && <Inbox onClick={onClickInboxList} />}
+      {actionType === "task" && CardTask}
+      {actionType === "inbox" && Inbox}
       {actionType === "inboxDetail" && (
         <InboxDetail
           onClickBack={onClickChangeInboxType}
@@ -46,9 +33,8 @@ const QuickAction = () => {
       )}
 
       {/* <Image src="/gif/icon-loading.gif" height={24} width={24} alt="ok" /> */}
-
       <div className="flex justify-end items-end gap-4">
-        {isToggle && (
+        {isToggleQuickAction && (
           <div className={quickActionClassName}>
             <QuickIcon
               onClick={onClickChangeTaskType}
@@ -86,7 +72,7 @@ const QuickAction = () => {
         )}
         {actionType === undefined && (
           <QuickIcon
-            onClick={onToggle}
+            onClick={onToggleQuickAction}
             backgroundColor="bg-primary"
             icon="icon-shape-stroke"
             backgroundSize="50px"
