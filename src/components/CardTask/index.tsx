@@ -1,6 +1,8 @@
 import React from "react";
 
-import { TaskData, Select, Button, Card } from "@/components";
+import { Select, Button, Card } from "@/components";
+
+import TaskData from "./TaskData";
 // import { dashboardFetchInboxList } from "@/request/dashboard";
 
 const CardTask = () => {

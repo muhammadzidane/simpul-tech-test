@@ -3,10 +3,13 @@ import React from "react";
 
 import { type Metadata } from "next";
 
-import { CardTask, Inbox } from "@/components";
+import {
+  CardInboxDetail,
+  QuickAction,
+  CardInbox,
+  CardTask,
+} from "@/components";
 import { QuickActionProvider } from "@/contexts";
-
-import { QuickAction } from "./components";
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -18,7 +21,11 @@ const Dashboard = () => {
     <>
       <div className="absolute bottom-6 right-6">
         <QuickActionProvider>
-          <QuickAction CardTask={<CardTask />} Inbox={<Inbox />} />
+          <QuickAction
+            CardInboxDetail={<CardInboxDetail />}
+            CardInbox={<CardInbox />}
+            CardTask={<CardTask />}
+          />
         </QuickActionProvider>
       </div>
     </>

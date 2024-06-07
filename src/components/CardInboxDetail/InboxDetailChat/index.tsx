@@ -3,7 +3,7 @@ import React from "react";
 import classNames from "classnames";
 import Image from "next/image";
 
-import { Popover } from "@/components/atoms";
+import { Popover } from "@/components";
 
 const InboxDetailChat: React.FC<InboxDetailChatProps> = ({
   username,

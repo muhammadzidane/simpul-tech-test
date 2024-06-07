@@ -4,16 +4,19 @@ import React from "react";
 
 import classNames from "classnames";
 
-import { InboxDetail, QuickIcon } from "@/components";
+import { QuickIcon } from "@/components";
 import { useQuickActionContext } from "@/contexts";
 
-const QuickAction: React.FC<QuickActionProps> = ({ CardTask, Inbox }) => {
+const QuickAction: React.FC<QuickActionProps> = ({
+  CardInboxDetail,
+  CardInbox,
+  CardTask,
+}) => {
   const {
     onClickChangeInboxType,
     onClickChangeTaskType,
     isToggleQuickAction,
     onToggleQuickAction,
-    onCloseQuickAction,
     actionType,
   } = useQuickActionContext();
 
@@ -24,13 +27,8 @@ const QuickAction: React.FC<QuickActionProps> = ({ CardTask, Inbox }) => {
   return (
     <div className="absolute bottom-6 right-6">
       {actionType === "task" && CardTask}
-      {actionType === "inbox" && Inbox}
-      {actionType === "inboxDetail" && (
-        <InboxDetail
-          onClickBack={onClickChangeInboxType}
-          onClickClose={onCloseQuickAction}
-        />
-      )}
+      {actionType === "inbox" && CardInbox}
+      {actionType === "inboxDetail" && CardInboxDetail}
 
       {/* <Image src="/gif/icon-loading.gif" height={24} width={24} alt="ok" /> */}
       <div className="flex justify-end items-end gap-4">

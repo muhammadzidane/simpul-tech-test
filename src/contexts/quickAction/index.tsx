@@ -4,7 +4,7 @@ import { createContext, useContext, useState } from "react";
 
 import useToggle from "@/hooks/toggle";
 
-const QuickActionContext = createContext<QuickActionContextProps>({
+export const QuickActionContext = createContext<QuickActionContextProps>({
   onClickChangeInboxType: () => {},
   onClickChangeTaskType: () => {},
   onToggleQuickAction: () => {},

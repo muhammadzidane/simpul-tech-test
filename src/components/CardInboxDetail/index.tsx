@@ -1,28 +1,18 @@
 import React from "react";
 
-import {
-  InboxDetailHeader,
-  InboxDetailChat,
-  Divider,
-  Button,
-  Input,
-  Card,
-} from "@/components";
+import { Divider, Button, Input, Card } from "@/components";
 
-const InboxDetail: React.FC<InboxDetailProps> = ({
-  onClickClose,
-  onClickBack,
-}) => {
+import InboxDetailChat from "./InboxDetailChat";
+import InboxDetailHeader from "./InboxDetailHeader";
+
+const CardInboxDetail: React.FC = () => {
   return (
     <Card
       className="!p-0 flex flex-col animate-slide-in-top"
       height="480px"
       width="708px"
     >
-      <InboxDetailHeader
-        onClickClose={onClickClose}
-        onClickBack={onClickBack}
-      />
+      <InboxDetailHeader />
 
       <div className="px-[19px] py-[14px] mr-1 overflow-y-scroll h-[calc(100%-58px)]">
         <InboxDetailChat message="No worries" type={2} />
@@ -45,7 +35,7 @@ const InboxDetail: React.FC<InboxDetailProps> = ({
         />
       </div>
 
-      <div className="flex gap-[13px] px-[20px] py-[14px] mt-auto">
+      <div className="flex flex-1 gap-[13px] px-[20px] py-[14px] mt-auto">
         <Input placeholder="Type a new message" />
         <Button>Send</Button>
       </div>
@@ -53,4 +43,4 @@ const InboxDetail: React.FC<InboxDetailProps> = ({
   );
 };
 
-export default InboxDetail;
+export default CardInboxDetail;

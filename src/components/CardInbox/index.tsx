@@ -1,9 +1,11 @@
 import React from "react";
 
-import { InboxList, Input, Card } from "@/components";
+import { Input, Card } from "@/components";
+
+import InboxList from "./InboxList";
 // import { dashboardFetchInboxList } from "@/request/dashboard";
 
-const Inbox: React.FC = async () => {
+const CardInbox: React.FC = async () => {
   // const inboxList = await dashboardFetchInboxList({ limit: 10, page: 1 });
 
   // console.log("wahhh", inboxList.data);
@@ -29,4 +31,4 @@ const Inbox: React.FC = async () => {
   );
 };
 
-export default Inbox;
+export default CardInbox;

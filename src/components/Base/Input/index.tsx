@@ -14,7 +14,7 @@ const Input: React.FC<InputProps> = ({
     "block w-full h-[40px] px-3 border border-gray-2 rounded-[6px]"
   );
   return (
-    <div className="relative text-sm">
+    <div className="relative text-sm w-full">
       <input className={inputClassName} placeholder={placeholder} {...rest} />
       {icon && (
         <div className="flex items-center absolute bottom-[50%] top-[50%] right-3">
