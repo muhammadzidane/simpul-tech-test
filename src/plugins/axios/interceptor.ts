@@ -5,6 +5,7 @@ const appId = process.env.NEXT_PUBLIC_DUMMY_API_APP_ID;
 
 const http = axios.create({
   baseURL: mainApi ? `${mainApi}` : "/api",
+  timeout: 5000,
 });
 
 http.interceptors.request.use(

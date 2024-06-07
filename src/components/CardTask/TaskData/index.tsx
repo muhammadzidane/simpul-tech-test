@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 
 import classNames from "classnames";
+import dayjs from "dayjs";
 import Image from "next/image";
 
 import { DatePicker, CheckBox, TextArea } from "@/components";
@@ -51,7 +52,9 @@ const TaskData: React.FC<TaskDataProps> = ({
 
           <div className="flex">
             <div className="mr-[19px] text-danger text-sm">{deadline}</div>
-            <div className="mr-2 text-sm">{date}</div>
+            <div className="mr-2 text-sm">
+              {dayjs(date).format("DD/MM/YYYY")}
+            </div>
 
             <Image
               onClick={onToggleArrow}

@@ -18,17 +18,15 @@ export const metadata: Metadata = {
 
 const Dashboard = () => {
   return (
-    <>
-      <div className="absolute bottom-6 right-6">
-        <QuickActionProvider>
-          <QuickAction
-            CardInboxDetail={<CardInboxDetail />}
-            CardInbox={<CardInbox />}
-            CardTask={<CardTask />}
-          />
-        </QuickActionProvider>
-      </div>
-    </>
+    <div className="absolute bottom-6 right-6">
+      <QuickActionProvider>
+        <QuickAction
+          CardInboxDetail={<CardInboxDetail />}
+          CardInbox={<CardInbox />}
+          CardTask={<CardTask />}
+        />
+      </QuickActionProvider>
+    </div>
   );
 };
 

@@ -2,10 +2,17 @@
 
 import React from "react";
 
+import dayjs from "dayjs";
+
 import { QuickIcon } from "@/components";
 import { useQuickActionContext } from "@/contexts";
 
-const InboxList: React.FC = () => {
+const InboxList: React.FC<InboxListProps> = ({
+  message,
+  title,
+  date,
+  name,
+}) => {
   const { onClickInboxList } = useQuickActionContext();
 
   return (
@@ -35,18 +42,18 @@ const InboxList: React.FC = () => {
       <div className="flex-1 text-sm">
         <div className="flex gap-3 flex-1">
           <div>
-            <div className="text-primary font-semibold">
-              109220-Naturalization
-            </div>
+            <div className="text-primary font-semibold">{title}</div>
           </div>
-          <div className="">Januari 1, 2021 19:10</div>
+          <div>{dayjs(date).format("MMMM D, YYYY HH:mm")}</div>
         </div>
 
         <div>
-          <div className="font-semibold ">Cameron Philip:</div>
+          <div className="font-semibold ">{name}:</div>
           <div className="flex justify-between">
-            <div className="">Please check this out!</div>
-            <div className="bg-danger w-[10px] h-[10px] rounded-full"></div>
+            <div className="">{message}</div>
+            {message.length <= 15 && (
+              <div className="bg-danger w-[10px] h-[10px] rounded-full"></div>
+            )}
           </div>
         </div>
       </div>

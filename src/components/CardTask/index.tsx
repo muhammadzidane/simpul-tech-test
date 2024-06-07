@@ -1,12 +1,12 @@
 import React from "react";
 
 import { Select, Button, Card } from "@/components";
+import { dashboardFetchTaskList } from "@/request/dashboard";
 
 import TaskData from "./TaskData";
-// import { dashboardFetchInboxList } from "@/request/dashboard";
 
-const CardTask = () => {
-  // const response = await dashboardFetchInboxList();
+const CardTask = async () => {
+  const taskList = await dashboardFetchTaskList({ limit: "10", page: "1" });
 
   const myTaskOptions = [
     { label: "Personal Errands", value: "personalErrands" },
@@ -29,26 +29,18 @@ const CardTask = () => {
       </div>
 
       <div className="flex flex-col gap-[20px] overflow-y-scroll pr-2">
-        <TaskData
-          description="Closing off this case since this application has been cancelled.
-          No one really understand how this case could possibly be
-          cancelled. The options and the documents within this document were
-          totally a guaranteed for a success!"
-          title="Close off case #012920-RODRIGUES, Amiguel"
-          deadline="2 Days Left"
-          date="12/06/2021"
-          checked
-        />
-        <TaskData
-          title="Close off case #012920-RODRIGUES, Amiguel"
-          deadline="2 Days Left"
-          date="12/06/2021"
-        />
-        <TaskData
-          title="Close off case #012920-RODRIGUES, Amiguel"
-          deadline="2 Days Left"
-          date="12/06/2021"
-        />
+        {taskList?.data.map(
+          ({ publishDate, owner, likes, text }, taskDataIndex) => (
+            <TaskData
+              title={owner.firstName + " " + owner.lastName}
+              deadline="2 Days Left"
+              checked={likes <= 5}
+              key={taskDataIndex}
+              description={text}
+              date={publishDate}
+            />
+          )
+        )}
       </div>
     </Card>
   );
