@@ -25,10 +25,18 @@ export const QuickActionProvider: React.FC<ChildrenProps> = ({ children }) => {
   >(undefined);
 
   const onClickChangeTaskType = () => {
-    setActionType("task");
+    if (actionType === "task") {
+      onCloseQuickAction();
+    } else {
+      setActionType("task");
+    }
   };
   const onClickChangeInboxType = () => {
-    setActionType("inbox");
+    if (actionType === "inbox") {
+      onCloseQuickAction();
+    } else {
+      setActionType("inbox");
+    }
   };
   const onClickToInboxDetail = () => {
     setActionType("inboxDetail");

@@ -30,7 +30,6 @@ const QuickAction: React.FC<QuickActionProps> = ({
       {actionType === "inbox" && CardInbox}
       {actionType === "inboxDetail" && CardInboxDetail}
 
-      {/* <Image src="/gif/icon-loading.gif" height={24} width={24} alt="ok" /> */}
       <div className="flex justify-end items-end gap-4">
         {isToggleQuickAction && (
           <div className={quickActionClassName}>
