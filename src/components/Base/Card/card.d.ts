@@ -1,5 +1,3 @@
-interface CardProps extends ChildrenProps {
+interface CardProps extends ChildrenProps, HTMLAttributes<HTMLDivElement> {
   className?: string;
-  height: string;
-  width: string;
 }

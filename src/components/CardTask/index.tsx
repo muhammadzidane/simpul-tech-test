@@ -14,11 +14,7 @@ const CardTask = async () => {
   ];
 
   return (
-    <Card
-      className="flex flex-col animate-slide-in-top"
-      height="480px"
-      width="708px"
-    >
+    <Card className="flex flex-col animate-slide-in-top w-[708px] h-[480px]">
       <div className="flex justify-between pl-20 mb-[20px]">
         <Select
           selectClassName="w-fit"

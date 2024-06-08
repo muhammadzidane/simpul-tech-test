@@ -12,7 +12,7 @@ const CardInbox: React.FC = async () => {
   });
 
   return (
-    <Card className="animate-slide-in-top flex" height="480px" width="525px">
+    <Card className="animate-slide-in-top flex w-[708px] h-[480px]">
       <div className="flex flex-1 flex-col gap-5 overflow-y-hidden">
         <Input icon="icon-search-black" placeholder="Search" />
 

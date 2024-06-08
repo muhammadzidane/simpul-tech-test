@@ -40,11 +40,7 @@ const CardInboxDetail: React.FC = () => {
   };
 
   return (
-    <Card
-      className="!p-0 flex flex-col animate-slide-in-top"
-      height="480px"
-      width="708px"
-    >
+    <Card className="!p-0 flex flex-col animate-slide-in-top w-[708px] h-[480px]">
       {isLoadingInboxDetail ? (
         <Loading title="Loading Chats..." />
       ) : (
