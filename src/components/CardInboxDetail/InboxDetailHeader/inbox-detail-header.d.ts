@@ -1,3 +1,4 @@
 interface InboxDetailHeaderProps {
-  title: string;
+  title: undefined | string;
+  id: undefined | string;
 }

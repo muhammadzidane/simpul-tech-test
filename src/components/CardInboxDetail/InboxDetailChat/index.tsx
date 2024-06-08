@@ -1,6 +1,7 @@
 import React from "react";
 
 import classNames from "classnames";
+import dayjs from "dayjs";
 import Image from "next/image";
 
 import { Popover } from "@/components";
@@ -9,6 +10,7 @@ const InboxDetailChat: React.FC<InboxDetailChatProps> = ({
   username,
   message,
   type,
+  date,
 }) => {
   const userClassName = classNames("font-semibold mb-1", {
     "text-right text-purple-1": type === 2,
@@ -54,7 +56,7 @@ const InboxDetailChat: React.FC<InboxDetailChatProps> = ({
         </div>
         <div className={chatClassName}>
           <div>{message}</div>
-          <div className="mt-2">19:32</div>
+          <div className="mt-2">{dayjs(date).format("HH:mm")}</div>
         </div>
       </div>
     </div>
