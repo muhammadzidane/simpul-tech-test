@@ -5,12 +5,10 @@
     "standard-with-typescript",
     "plugin:prettier/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:perfectionist/recommended-line-length",
-    "plugin:@tanstack/eslint-plugin-query/recommended"
+    "plugin:perfectionist/recommended-line-length"
   ],
   "plugins": [
-    "@typescript-eslint", 
-    "@tanstack/query",
+    "@typescript-eslint",
     "perfectionist"
   ],
   "rules": {

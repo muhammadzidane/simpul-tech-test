@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
 import { Inter } from "next/font/google";
-import "react-datepicker/dist/react-datepicker.css";
 import "react-datepicker/dist/react-datepicker-cssmodules.css";
+import "react-datepicker/dist/react-datepicker.css";
 
 import NextAuthProvider from "@/plugins/next-auth/provider";
-// import ReactQueryProvider from "@/plugins/react-query/provider";
+import CustomSWRConfig from "@/plugins/swr";
 import "@/styles/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -23,9 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {/* <ReactQueryProvider> */}
-        <NextAuthProvider>{children}</NextAuthProvider>
-        {/* </ReactQueryProvider> */}
+        <CustomSWRConfig>
+          <NextAuthProvider>{children}</NextAuthProvider>
+        </CustomSWRConfig>
       </body>
     </html>
   );

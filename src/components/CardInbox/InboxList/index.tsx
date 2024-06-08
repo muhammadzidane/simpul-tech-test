@@ -12,12 +12,18 @@ const InboxList: React.FC<InboxListProps> = ({
   title,
   date,
   name,
+  id,
 }) => {
-  const { onClickInboxList } = useQuickActionContext();
+  const { onClickToInboxDetail, setInboxDetailId } = useQuickActionContext();
+
+  const onClickToInboxDetailWithId = () => {
+    onClickToInboxDetail();
+    setInboxDetailId(id);
+  };
 
   return (
     <div
-      onClick={onClickInboxList}
+      onClick={onClickToInboxDetailWithId}
       className="flex gap-3 border-b border-gray-1 pl-4 pb-5 cursor-pointer"
     >
       <div className="relative">

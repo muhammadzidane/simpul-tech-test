@@ -7,16 +7,19 @@ import useToggle from "@/hooks/toggle";
 export const QuickActionContext = createContext<QuickActionContextProps>({
   onClickChangeInboxType: () => {},
   onClickChangeTaskType: () => {},
+  onClickToInboxDetail: () => {},
   onToggleQuickAction: () => {},
   onCloseQuickAction: () => {},
-  onClickInboxList: () => {},
   isToggleQuickAction: false,
-  actionType: undefined,
+  setInboxDetailId: () => {},
+  inboxDetailId: "",
+  actionType: null,
 });
 
 export const QuickActionProvider: React.FC<ChildrenProps> = ({ children }) => {
   const { isToggle: isToggleQuickAction, onToggle: onToggleQuickAction } =
     useToggle();
+  const [inboxDetailId, setInboxDetailId] = useState<string>("");
   const [actionType, setActionType] = useState<
     "inboxDetail" | undefined | "inbox" | "task"
   >(undefined);
@@ -27,7 +30,7 @@ export const QuickActionProvider: React.FC<ChildrenProps> = ({ children }) => {
   const onClickChangeInboxType = () => {
     setActionType("inbox");
   };
-  const onClickInboxList = (id: string) => {
+  const onClickToInboxDetail = () => {
     setActionType("inboxDetail");
   };
   const onCloseQuickAction = () => {
@@ -40,10 +43,12 @@ export const QuickActionProvider: React.FC<ChildrenProps> = ({ children }) => {
       value={{
         onClickChangeInboxType,
         onClickChangeTaskType,
+        onClickToInboxDetail,
         isToggleQuickAction,
         onToggleQuickAction,
         onCloseQuickAction,
-        onClickInboxList,
+        setInboxDetailId,
+        inboxDetailId,
         actionType,
       }}
     >

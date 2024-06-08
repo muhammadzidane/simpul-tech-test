@@ -7,7 +7,7 @@ export const dashboardFetchTaskList = async (
     const result: BaseResponseApi<DashboardTaskData[]> = await customFetch(
       "/post",
       {
-        next: { revalidate: 60 },
+        next: { revalidate: 30 },
         params,
       }
     );
@@ -24,8 +24,22 @@ export const dashboardFetchInboxList = async (
     const result: BaseResponseApi<DashboardInboxData[]> = await customFetch(
       "/comment",
       {
-        next: { revalidate: 60 },
+        next: { revalidate: 30 },
         params,
+      }
+    );
+    return result;
+  } catch (error) {
+    //
+  }
+};
+
+export const dashboardFetchInboxDetail = async (id: string) => {
+  try {
+    const result: BaseResponseApi<DashboardInboxData[]> = await customFetch(
+      `/post/${id}/comment`,
+      {
+        next: { revalidate: 30 },
       }
     );
     return result;

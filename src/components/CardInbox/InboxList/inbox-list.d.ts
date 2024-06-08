@@ -3,4 +3,5 @@ interface InboxListProps {
   title: string;
   date: string;
   name: string;
+  id: string;
 }

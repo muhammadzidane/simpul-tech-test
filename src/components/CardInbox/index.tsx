@@ -17,12 +17,13 @@ const CardInbox: React.FC = async () => {
         <Input icon="icon-search-black" placeholder="Search" />
 
         <div className="flex flex-col flex-1 gap-4 overflow-y-scroll pr-2">
-          {inboxList?.data.map(({ publishDate, message, owner, id }) => (
+          {inboxList?.data.map(({ publishDate, message, owner, post, id }) => (
             <InboxList
               name={owner.firstName + " " + owner.firstName}
               date={publishDate}
               message={message}
               title={id}
+              id={post}
               key={id}
             />
           ))}

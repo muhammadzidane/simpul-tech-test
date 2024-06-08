@@ -6,7 +6,7 @@ import Image from "next/image";
 
 import { useQuickActionContext } from "@/contexts";
 
-const InboxDetailHeader: React.FC = () => {
+const InboxDetailHeader: React.FC<InboxDetailHeaderProps> = ({ title }) => {
   const { onCloseQuickAction } = useQuickActionContext();
 
   return (
@@ -22,7 +22,7 @@ const InboxDetailHeader: React.FC = () => {
         />
         <div>
           <div className="text-primary text-base font-semibold">
-            I-423 - AMARKHIL, Obaidullah [Affirmative Filling with ZHN]
+            I-423 - {title}
           </div>
         </div>
       </div>
